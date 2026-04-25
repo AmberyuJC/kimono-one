@@ -1,0 +1,139 @@
+{
+  "stores": [
+    {
+      "id": "store_asakusa_main",
+      "slug": "asakusa-main",
+      "name": "浅草本店",
+      "nameEn": "Asakusa Main Store",
+      "city": "东京",
+      "address": "〒111-0032 东京都台东区浅草3-30-2末崎ビル",
+      "addressEn": "3-30-2 Asakusa, Taito-ku, Tokyo 111-0032",
+      "phone": "03-6802-3566",
+      "email": "asakusa@hefumiyabi.com",
+      "latitude": 35.7148,
+      "longitude": 139.7967
+    },
+    {
+      "id": "store_asakusa_station",
+      "slug": "asakusa-station",
+      "name": "浅草站前店",
+      "nameEn": "Asakusa Station Front Store",
+      "city": "东京",
+      "address": "〒111-0034 东京都台东区雷门2-20-8 プリマベーラ2F",
+      "addressEn": "2-20-8 Kaminarimon, Taito-ku, Tokyo 111-0034",
+      "phone": "03-5830-6278",
+      "email": "station@hefumiyabi.com",
+      "latitude": 35.7115,
+      "longitude": 139.7968
+    },
+    {
+      "id": "store_kiyomizu",
+      "slug": "kiyomizu",
+      "name": "清水寺店",
+      "nameEn": "Kiyomizu Store",
+      "city": "京都",
+      "address": "〒605-0829 京都府京都市东山区月见町10-2 八坂ビル204",
+      "addressEn": "10-2 Tsukimichou, Higashiyama-ku, Kyoto 605-0829",
+      "phone": "075-708-6566",
+      "email": "kiyomizu@hefumiyabi.com",
+      "latitude": 34.9948,
+      "longitude": 135.785
+    }
+  ],
+  "plans": [
+    {
+      "id": "plan_student_discount",
+      "slug": "student-discount",
+      "name": "学生专享·凭证优惠",
+      "description": "凭有效学生证即可享受超值优惠和服租赁，适合学生和预算敏感型首次体验。",
+      "scene": "value",
+      "price": 8000,
+      "durationHours": 4,
+      "heroImageUrl": null,
+      "isActive": true
+    },
+    {
+      "id": "plan_kimono_first_experience",
+      "slug": "kimono-first-experience",
+      "name": "和服初体验·轻装上阵",
+      "description": "适合第一次穿和服的入门套餐，轻便舒适，着装流程更短。",
+      "scene": "first-time",
+      "price": 10000,
+      "durationHours": 4,
+      "heroImageUrl": null,
+      "isActive": true
+    },
+    {
+      "id": "plan_afternoon_yukata",
+      "slug": "afternoon-yukata",
+      "name": "午后浴衣·半日轻体验",
+      "description": "适合夏季半日漫步的轻体验套餐，强调轻便和快速决策。",
+      "scene": "yukata",
+      "price": 6000,
+      "durationHours": 3,
+      "heroImageUrl": null,
+      "isActive": true
+    },
+    {
+      "id": "plan_sakura_seasonal",
+      "slug": "sakura-seasonal",
+      "name": "樱花季限定·粉色系优先",
+      "description": "围绕樱花季拍照需求设计的季节限定套餐。",
+      "scene": "seasonal",
+      "price": 20000,
+      "durationHours": 4,
+      "heroImageUrl": null,
+      "isActive": true
+    }
+  ],
+  "planStores": [
+    {
+      "id": "plan_store_student_asakusa_main",
+      "planId": "plan_student_discount",
+      "storeId": "store_asakusa_main",
+      "onlinePrice": 8000,
+      "walkInPrice": 9000,
+      "isActive": true
+    },
+    {
+      "id": "plan_store_student_station",
+      "planId": "plan_student_discount",
+      "storeId": "store_asakusa_station",
+      "onlinePrice": 8000,
+      "walkInPrice": 9000,
+      "isActive": true
+    },
+    {
+      "id": "plan_store_first_asakusa_main",
+      "planId": "plan_kimono_first_experience",
+      "storeId": "store_asakusa_main",
+      "onlinePrice": 10000,
+      "walkInPrice": 12000,
+      "isActive": true
+    },
+    {
+      "id": "plan_store_first_kiyomizu",
+      "planId": "plan_kimono_first_experience",
+      "storeId": "store_kiyomizu",
+      "onlinePrice": 10000,
+      "walkInPrice": 12000,
+      "isActive": true
+    },
+    {
+      "id": "plan_store_yukata_station",
+      "planId": "plan_afternoon_yukata",
+      "storeId": "store_asakusa_station",
+      "onlinePrice": 6000,
+      "walkInPrice": 7000,
+      "isActive": true
+    },
+    {
+      "id": "plan_store_sakura_kiyomizu",
+      "planId": "plan_sakura_seasonal",
+      "storeId": "store_kiyomizu",
+      "onlinePrice": 20000,
+      "walkInPrice": 22000,
+      "isActive": true
+    }
+  ]
+}
