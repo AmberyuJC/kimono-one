@@ -8,7 +8,7 @@ The repository has completed the harness bootstrap and now includes the first
 fixture-backed vertical slice: `catalog -> plan detail -> cart -> booking draft`.
 
 - `React Router Framework` is the UI and SSR shell.
-- `Hono` is the future HTTP adapter and stays thin.
+- `Hono` is the HTTP adapter for API contracts and stays thin.
 - `Drizzle` is the default database layer.
 - `Vitest` and `Playwright` are the verification rails.
 - GitHub-native instructions and custom agents are first-class artifacts from day one.
