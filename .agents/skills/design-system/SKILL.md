@@ -20,6 +20,36 @@ Prevent UI style drift. Agents must follow documented tokens and patterns when t
 6. **Reuse existing component patterns** before creating new ones. Check components.md for shells, cards, grids, and art patterns that may already cover your need.
 7. **All styling goes in `app/app.css`**. Do not add inline styles, CSS modules, or styled-components.
 
+## Hard rules — break these and the design stops being Kimono One
+
+**Color**
+- Primary CTA = `--shu-500` (#d45b47). Hover `--shu-600`. Never indigo, never purple, never green-as-CTA.
+- Sakura is decorative coral, not the primary — use for kamon stroke, eyebrow text, gradient buttons, link hover.
+- Page bg = `--background` (#fff) for homepage, `--wabi-50` for immersive, `--gray-50` for forms. Forbidden: `--gray-100` (too cold) or large pink panels.
+
+**Type**
+- Three families, three voices: `--font-sans` (Chinese body + UI), `--font-serif` (Chinese titles), `--font-mincho` (Japanese decoration only).
+- Never load CJK from Google Fonts. System stack only.
+- Sizes are fixed pixels — `var(--fs-base)`, `var(--fs-lg)`, etc. Forbid `text-sm`, `text-lg`, `text-xl`.
+- Weights: 400/500/600 only. No 300, no 700.
+
+**Spacing**
+- 4px grid. Allowed: 4·8·12·16·24·32·40·48·64·80·96. Forbid `gap-5/7/9`, `p-5/7`.
+
+**Radii**
+- Buttons + inputs `--radius-lg` (12px). Cards `--radius-xl` (16px). Hero blocks `--radius-2xl` (24px). Pills `--radius-full` (9999px). Forbid `rounded-md (8)`, `rounded-sm (4)`.
+
+**Animation**
+- Easing `--ease-out-quart`. Durations 200/300/500/700ms. Forbid 100/150ms and 1000ms+.
+- Card hover: `translateY(-8px) + shadow-xl`. Button hover: `scale(1.05)`, press: `scale(0.95)`.
+
+**Forbidden tropes**
+- Indigo or purple gradients
+- Left-border-accent cards
+- Hand-drawn SVG illustrations (kamon is the only custom SVG)
+- Emoji as bullets or section markers
+- `→` arrows in CTA labels
+
 ## After UI changes
 
 8. Run `pnpm test:e2e` to verify no visual regressions on both desktop and mobile viewports.
@@ -27,5 +57,5 @@ Prevent UI style drift. Agents must follow documented tokens and patterns when t
 
 ## Reference
 
-- [ref/tokens.md](ref/tokens.md) — design tokens extracted from app/app.css
-- [ref/components.md](ref/components.md) — component patterns and layout conventions
+- [ref/tokens.md](ref/tokens.md) — complete design token reference (colors, type, spacing, radii, shadows, easing)
+- [ref/components.md](ref/components.md) — component patterns, layout conventions, and hard rules

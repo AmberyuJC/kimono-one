@@ -1,16 +1,164 @@
 @import "tailwindcss";
 
+/* ================================================================
+   Kimono One — Design System
+   侘寂禅意 (Wabi-sabi Zen) + 日式传统色彩 + Airbnb 极简
+   Source of truth for all visual tokens.
+   ================================================================ */
+
 :root {
-  color: #241916;
-  background: #f7f1e8;
-  font-family:
-    "Hiragino Sans", "Yu Gothic", "Noto Sans JP", system-ui, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* ── 朱色 Shu — 主品牌色 (鳥居朱紅 / Torii Vermilion) ── */
+  --shu-50: #fff7f5;
+  --shu-100: #ffede9;
+  --shu-200: #ffd5cc;
+  --shu-300: #f7a99a;
+  --shu-400: #e8806e;
+  --shu-500: #d45b47;
+  --shu-600: #b8412e;
+  --shu-700: #962e1d;
+  --shu-800: #6e2014;
+  --shu-900: #4a120a;
+
+  /* ── 樱色 Sakura — 温暖珊瑚 / Warm coral ── */
+  --sakura-50: #fff8f6;
+  --sakura-100: #ffefeb;
+  --sakura-200: #ffddd6;
+  --sakura-300: #f2b0a5;
+  --sakura-400: #e3948a;
+  --sakura-500: #d87b70;
+  --sakura-600: #c0635a;
+  --sakura-700: #9e4d45;
+  --sakura-800: #7a3832;
+  --sakura-900: #522520;
+
+  /* ── 侘寂色系 Wabi-Sabi — 日式 Zen 中性色 ── */
+  --wabi-50: #fdfbf7;
+  --wabi-100: #f5f0e8;
+  --wabi-200: #e8e2dc;
+  --wabi-300: #d4ccc2;
+  --wabi-400: #b8a89a;
+  --wabi-500: #8b7355;
+  --wabi-600: #5c5854;
+  --wabi-700: #3d3a38;
+  --wabi-800: #2d2a26;
+  --wabi-900: #1a1816;
+
+  /* ── 中性灰 (Airbnb gray) ── */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* ── 语义颜色 ── */
+  --background: #ffffff;
+  --foreground: var(--gray-800);
+  --primary: var(--shu-500);
+  --primary-foreground: #ffffff;
+  --accent: var(--shu-600);
+  --accent-foreground: #ffffff;
+  --secondary: var(--gray-50);
+  --secondary-foreground: var(--gray-600);
+  --border: var(--gray-200);
+  --input: var(--gray-200);
+  --ring: var(--shu-500);
+  --card: #ffffff;
+  --card-foreground: var(--gray-800);
+  --muted: var(--gray-100);
+  --muted-foreground: var(--gray-500);
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+
+  /* ── 圆角 ── */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  --radius: var(--radius-lg);
+
+  /* ── 阴影 ── */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-shu: 0 10px 25px -5px rgb(212 91 71 / 0.15);
+  --shadow-shu-lg: 0 20px 40px -10px rgb(212 91 71 / 0.20);
+  --shadow-sakura: 0 10px 25px -5px rgb(216 123 112 / 0.15);
+  --shadow-sakura-lg: 0 20px 40px -10px rgb(216 123 112 / 0.20);
+
+  /* ── 间距 (4px base) ── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ── 字体栈 (System-only — never load CJK from Google Fonts) ── */
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+  --font-serif:
+    "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC",
+    "Noto Serif SC", "SimSun", Georgia, serif;
+  --font-mincho:
+    "Noto Serif JP", "Source Han Serif", "Hiragino Mincho ProN",
+    "Yu Mincho", "MS Mincho", serif;
+  --font-mono:
+    "SF Mono", Monaco, "Cascadia Code", Consolas, monospace;
+
+  /* ── 字号 (fixed pixel — never use Tailwind named sizes) ── */
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-15: 15px;
+  --fs-base: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 22px;
+  --fs-2xl: 26px;
+  --fs-3xl: 32px;
+  --fs-hero: 42px;
+
+  /* ── 字重 (400/500/600 only — never 700+) ── */
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* ── Easing ── */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* ── Root typography ── */
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  font-weight: var(--fw-normal);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* ================================================================
+   Reset
+   ================================================================ */
 
 * {
   box-sizing: border-box;
@@ -23,10 +171,8 @@ body {
 }
 
 body {
-  background:
-    linear-gradient(135deg, rgba(28, 73, 75, 0.1) 0 1px, transparent 1px 32px),
-    linear-gradient(180deg, #fbf6ed 0%, #efe3d4 58%, #f7f1e8 100%);
-  color: #241916;
+  background: var(--background);
+  color: var(--foreground);
 }
 
 a {
@@ -41,6 +187,10 @@ textarea {
   font: inherit;
 }
 
+/* ================================================================
+   Buttons
+   ================================================================ */
+
 button,
 .primary-link {
   display: inline-flex;
@@ -48,12 +198,25 @@ button,
   align-items: center;
   justify-content: center;
   border: 0;
-  border-radius: 6px;
-  background: #1c494b;
-  color: #fffaf1;
+  border-radius: var(--radius-lg);
+  background: var(--primary);
+  color: var(--primary-foreground);
   cursor: pointer;
-  font-weight: 700;
-  padding: 0 18px;
+  font-weight: var(--fw-semibold);
+  padding: 0 var(--space-6);
+  transition: all 200ms ease;
+}
+
+button:hover:not(:disabled),
+.primary-link:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-shu);
+}
+
+button:active:not(:disabled),
+.primary-link:active {
+  transform: scale(0.95);
 }
 
 button:disabled {
@@ -62,27 +225,36 @@ button:disabled {
 }
 
 code {
-  font-family: "SFMono-Regular", ui-monospace, monospace;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
 }
+
+/* ================================================================
+   Shell containers
+   ================================================================ */
 
 .home-shell,
 .shop-shell,
 .detail-shell,
 .flow-shell {
   margin: 0 auto;
-  max-width: 1180px;
-  padding: 28px 18px 72px;
+  max-width: 1280px;
+  padding: var(--space-8) var(--space-6) var(--space-24);
 }
+
+/* ================================================================
+   Navigation
+   ================================================================ */
 
 .top-nav,
 .breadcrumb {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--space-3);
   align-items: center;
-  color: #614d42;
-  font-size: 0.95rem;
-  font-weight: 700;
+  color: var(--wabi-600);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
 }
 
 .top-nav {
@@ -94,27 +266,40 @@ code {
   border-bottom: 1px solid currentColor;
 }
 
+/* ================================================================
+   Shop hero
+   ================================================================ */
+
 .shop-hero {
   display: grid;
   min-height: 360px;
   align-content: space-between;
-  border-bottom: 1px solid rgba(36, 25, 22, 0.14);
-  padding: 22px 0 36px;
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-6) 0 var(--space-12);
 }
 
 .shop-hero-copy {
   max-width: 760px;
 }
 
+/* ================================================================
+   Eyebrow / scene labels
+   ================================================================ */
+
 .eyebrow,
 .plan-scene,
 .status-label {
-  margin: 0 0 12px;
-  color: #9d3e33;
-  font-size: 0.78rem;
-  font-weight: 800;
+  margin: 0 0 var(--space-3);
+  color: var(--sakura-500);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
   text-transform: uppercase;
+  letter-spacing: 0.25em;
 }
+
+/* ================================================================
+   Headings
+   ================================================================ */
 
 .shop-hero h1,
 .detail-copy h1,
@@ -122,34 +307,49 @@ code {
 .confirmation-panel h1,
 .hero h1 {
   margin: 0;
-  color: #241916;
-  font-size: 3.25rem;
-  line-height: 1.02;
+  color: var(--wabi-800);
+  font-family: var(--font-serif);
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-semibold);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
+
+/* ================================================================
+   Body text
+   ================================================================ */
 
 .shop-hero p,
 .lede,
 .flow-copy,
 .detail-copy > p {
   max-width: 66ch;
-  color: #614d42;
-  font-size: 1.05rem;
+  color: var(--wabi-600);
+  font-size: var(--fs-base);
 }
+
+/* ================================================================
+   Catalog toolbar
+   ================================================================ */
 
 .catalog-toolbar {
   display: flex;
-  gap: 18px;
+  gap: var(--space-6);
   align-items: end;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(36, 25, 22, 0.12);
-  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-6) 0;
 }
+
+/* ================================================================
+   Forms
+   ================================================================ */
 
 .filter-form,
 .booking-card,
 .booking-form {
   display: grid;
-  gap: 14px;
+  gap: var(--space-4);
 }
 
 .filter-form {
@@ -159,29 +359,37 @@ code {
 
 label {
   display: grid;
-  gap: 8px;
-  color: #4a3932;
-  font-size: 0.92rem;
-  font-weight: 700;
+  gap: var(--space-2);
+  color: var(--wabi-700);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
 }
 
 input,
 select,
 textarea {
   width: 100%;
-  border: 1px solid rgba(36, 25, 22, 0.18);
-  border-radius: 6px;
-  background: #fffaf1;
-  color: #241916;
-  padding: 11px 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-lg);
+  background: var(--card);
+  color: var(--foreground);
+  padding: var(--space-3) var(--space-3);
 }
+
+/* ================================================================
+   Plan grid
+   ================================================================ */
 
 .plan-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 24px;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
 }
+
+/* ================================================================
+   Cards / Panels
+   ================================================================ */
 
 .plan-card,
 .panel,
@@ -190,16 +398,27 @@ textarea {
 .booking-form,
 .confirmation-panel,
 .empty-state {
-  border: 1px solid rgba(36, 25, 22, 0.12);
-  border-radius: 8px;
-  background: rgba(255, 250, 241, 0.88);
-  box-shadow: 0 18px 48px rgba(49, 34, 28, 0.08);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all 300ms var(--ease-out-quart);
+}
+
+.plan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
 }
 
 .plan-card-link {
   display: grid;
   min-height: 100%;
 }
+
+/* ================================================================
+   Art patterns (plan / detail hero banners)
+   ================================================================ */
 
 .plan-art,
 .detail-art {
@@ -214,9 +433,9 @@ textarea {
       rgba(255, 250, 241, 0.16) 0 8px,
       transparent 8px 18px
     ),
-    #1c494b;
-  color: #fffaf1;
-  padding: 16px;
+    var(--primary);
+  color: var(--primary-foreground);
+  padding: var(--space-4);
 }
 
 .detail-art {
@@ -225,29 +444,37 @@ textarea {
 
 .plan-art span,
 .detail-art span {
-  border-radius: 999px;
-  background: rgba(18, 30, 31, 0.56);
-  padding: 6px 10px;
-  font-size: 0.78rem;
-  font-weight: 800;
+  border-radius: var(--radius-full);
+  background: rgba(212, 91, 71, 0.56);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
   text-transform: uppercase;
 }
 
+/* ================================================================
+   Scene badge colors
+   ================================================================ */
+
 .scene-value {
-  background-color: #1c494b;
+  background-color: var(--shu-500);
 }
 
 .scene-first-time {
-  background-color: #7b5f3e;
+  background-color: var(--wabi-500);
 }
 
 .scene-yukata {
-  background-color: #2f5f8d;
+  background-color: var(--info);
 }
 
 .scene-seasonal {
-  background-color: #9d3e33;
+  background-color: var(--sakura-600);
 }
+
+/* ================================================================
+   Card / Panel body padding
+   ================================================================ */
 
 .plan-card-body,
 .panel,
@@ -256,21 +483,26 @@ textarea {
 .booking-form,
 .confirmation-panel,
 .empty-state {
-  padding: 22px;
+  padding: var(--space-6);
 }
 
 .plan-card h2 {
   min-height: 3.2rem;
-  margin: 0 0 18px;
-  font-size: 1.2rem;
-  line-height: 1.32;
+  margin: 0 0 var(--space-4);
+  font-size: var(--fs-15);
+  font-weight: var(--fw-semibold);
+  line-height: 1.35;
 }
+
+/* ================================================================
+   Facts grid (dt/dd pairs)
+   ================================================================ */
 
 .plan-facts,
 .detail-facts,
 .confirmation-panel dl {
   display: grid;
-  gap: 12px;
+  gap: var(--space-3);
   margin: 0;
 }
 
@@ -279,40 +511,48 @@ textarea {
 }
 
 dt {
-  color: #766257;
-  font-size: 0.78rem;
-  font-weight: 700;
+  color: var(--wabi-500);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
 }
 
 dd {
   margin: 0;
-  color: #241916;
-  font-weight: 800;
+  color: var(--foreground);
+  font-weight: var(--fw-semibold);
 }
+
+/* ================================================================
+   Detail / Flow layout (sidebar)
+   ================================================================ */
 
 .detail-layout,
 .flow-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 420px;
-  gap: 30px;
-  margin-top: 28px;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
   align-items: start;
 }
 
 .detail-copy {
   display: grid;
-  gap: 18px;
+  gap: var(--space-6);
 }
 
 .booking-card {
-  margin-top: 10px;
-  border-top: 1px solid rgba(36, 25, 22, 0.12);
-  padding-top: 18px;
+  margin-top: var(--space-3);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-6);
 }
+
+/* ================================================================
+   Cart
+   ================================================================ */
 
 .cart-lines {
   display: grid;
-  gap: 12px;
+  gap: var(--space-3);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -320,144 +560,210 @@ dd {
 
 .cart-lines li {
   display: flex;
-  gap: 14px;
+  gap: var(--space-4);
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(36, 25, 22, 0.1);
-  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-4);
 }
 
 .cart-lines h2 {
-  margin: 0 0 4px;
-  font-size: 1.05rem;
+  margin: 0 0 var(--space-1);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
 }
 
 .cart-lines p {
   margin: 0;
-  color: #614d42;
+  color: var(--wabi-600);
 }
 
 .line-actions {
   display: grid;
-  gap: 8px;
+  gap: var(--space-2);
   justify-items: end;
 }
 
 .line-actions button {
   min-height: 36px;
-  background: #f0e4d5;
-  color: #65483d;
+  background: var(--wabi-100);
+  color: var(--wabi-700);
+}
+
+.line-actions button:hover:not(:disabled) {
+  background: var(--wabi-200);
+  transform: none;
+  box-shadow: none;
 }
 
 .cart-summary {
   display: flex;
   justify-content: space-between;
-  margin: 18px 0;
-  font-size: 1.1rem;
+  margin: var(--space-6) 0;
+  font-size: var(--fs-lg);
 }
+
+/* ================================================================
+   Selected plan (booking flow sidebar)
+   ================================================================ */
 
 .selected-plan {
   display: grid;
-  gap: 4px;
-  border-left: 4px solid #1c494b;
-  background: #f2e7d8;
-  padding: 14px;
+  gap: var(--space-1);
+  background: var(--wabi-100);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
 }
 
 .selected-plan span {
-  color: #614d42;
+  color: var(--wabi-600);
 }
+
+/* ================================================================
+   Form error
+   ================================================================ */
 
 .form-error {
   margin: 0;
-  color: #9d3e33;
-  font-weight: 700;
+  color: var(--destructive);
+  font-weight: var(--fw-semibold);
 }
+
+/* ================================================================
+   Confirmation panel
+   ================================================================ */
 
 .confirmation-panel {
   max-width: 760px;
-  margin-top: 28px;
+  margin-top: var(--space-8);
 }
 
 .confirmation-panel dl div {
   display: grid;
   grid-template-columns: 120px minmax(0, 1fr);
-  gap: 18px;
-  border-bottom: 1px solid rgba(36, 25, 22, 0.1);
-  padding: 12px 0;
+  gap: var(--space-6);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-3) 0;
 }
 
 .confirmation-panel .primary-link {
-  margin-top: 22px;
+  margin-top: var(--space-6);
 }
+
+/* ================================================================
+   Hero (home page)
+   ================================================================ */
 
 .hero {
   display: grid;
-  gap: 24px;
+  gap: var(--space-6);
   align-items: start;
 }
 
+/* ================================================================
+   Status cards
+   ================================================================ */
+
 .status-value {
-  margin: 8px 0 6px;
-  font-size: 1.6rem;
-  font-weight: 700;
+  margin: var(--space-2) 0 var(--space-2);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
 }
 
 .status-meta,
 .panel li {
-  color: #614d42;
+  color: var(--wabi-600);
 }
+
+/* ================================================================
+   Content grid (3-column)
+   ================================================================ */
 
 .content-grid {
   display: grid;
-  gap: 16px;
-  margin-top: 28px;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
 }
 
 .panel h2 {
   margin-top: 0;
-  margin-bottom: 16px;
-  font-size: 1.15rem;
+  margin-bottom: var(--space-4);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
 }
 
 .panel ul,
 .panel ol {
   margin: 0;
-  padding-left: 20px;
+  padding-left: var(--space-6);
 }
 
 .panel li + li {
-  margin-top: 10px;
+  margin-top: var(--space-3);
 }
+
+/* ================================================================
+   Error pages
+   ================================================================ */
 
 .error-shell {
   display: grid;
-  gap: 16px;
+  gap: var(--space-4);
   max-width: 960px;
   margin: 0 auto;
-  padding: 64px 24px;
+  padding: var(--space-16) var(--space-6);
 }
 
 .error-card {
-  border: 1px solid rgba(36, 25, 22, 0.12);
-  border-radius: 8px;
-  background: #fffaf1;
-  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--card);
+  padding: var(--space-6);
 }
 
 .error-card h1 {
-  margin: 0 0 12px;
-  font-size: 2rem;
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-3xl);
 }
 
 .error-stack {
   margin: 0;
   overflow-x: auto;
-  border-radius: 8px;
-  padding: 16px;
-  background: #241916;
-  color: #fffaf1;
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+  background: var(--wabi-900);
+  color: var(--wabi-100);
 }
+
+/* ================================================================
+   Typography utilities
+   ================================================================ */
+
+.mincho {
+  font-family: var(--font-mincho);
+  letter-spacing: 0.08em;
+}
+
+.body-sm {
+  font-size: var(--fs-sm);
+  color: var(--gray-600);
+}
+
+.body-xs {
+  font-size: var(--fs-xs);
+  color: var(--gray-500);
+}
+
+.text-sakura-gradient {
+  background: linear-gradient(135deg, var(--sakura-400) 0%, var(--sakura-600) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ================================================================
+   Responsive breakpoints
+   ================================================================ */
 
 @media (min-width: 900px) {
   .hero {
@@ -475,7 +781,7 @@ dd {
   .flow-layout h1,
   .confirmation-panel h1,
   .hero h1 {
-    font-size: 2.35rem;
+    font-size: var(--fs-3xl);
   }
 
   .plan-grid,
@@ -494,7 +800,7 @@ dd {
   .shop-shell,
   .detail-shell,
   .flow-shell {
-    padding-inline: 14px;
+    padding-inline: var(--space-4);
   }
 
   .catalog-toolbar,
@@ -510,6 +816,6 @@ dd {
 
   .confirmation-panel dl div {
     grid-template-columns: 1fr;
-    gap: 4px;
+    gap: var(--space-1);
   }
 }
