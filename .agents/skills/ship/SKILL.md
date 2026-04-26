@@ -10,9 +10,10 @@ Commit, push, and open a PR in one flow.
 ## Steps
 
 1. **Verify** — run `pnpm typecheck && pnpm test && pnpm check:harness`. Stop if anything fails.
-2. **Stage & commit** — stage relevant files (never `.env` or credentials), write a concise Chinese commit message summarizing the "why". End with `Co-Authored-By:` line.
-3. **Push** — push the current branch to origin with `-u`.
-4. **Create PR** — use `gh pr create` targeting the main branch (`codex/harness-lab-bootstrap`). PR title in Chinese, under 70 characters. Body format:
+2. **Branch** — if on `main`, create a descriptive feature branch (e.g. `design-system-v2`, `feat/booking-flow`) and switch to it. Never commit directly to `main`.
+3. **Stage & commit** — stage relevant files (never `.env` or credentials), write a concise Chinese commit message summarizing the "why". End with `Co-Authored-By:` line.
+4. **Push** — push the feature branch to origin with `-u`. Ask the user to run the push if hooks block it.
+5. **Create PR** — use `gh pr create` targeting `main`. PR title in Chinese, under 70 characters. Body format:
 
 ```
 ## Summary
@@ -25,7 +26,7 @@ Commit, push, and open a PR in one flow.
 - [ ] (如有 UI 变更) 视觉验证
 ```
 
-5. **Report** — return the PR URL to the user.
+6. **Report** — return the PR URL to the user.
 
 ## Rules
 

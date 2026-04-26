@@ -19,6 +19,8 @@ Boundary rules:
 
 Current status:
 
-- The UI shell is active.
-- The Hono adapter skeleton exists but is not mounted into the runtime yet.
-- The database schema and seed pipeline are scaffolded for Milestone 1.
+- The React Router UI shell is active and serves the V0 booking slice.
+- The Hono adapter is mounted through the React Router `api/*` route and local server helpers.
+- The current runtime uses stable fixture-backed services for UI, API, and E2E flows.
+- Drizzle schema, migrations, seed data, and repository mappings exist for Postgres verification.
+- V1 still needs a runtime decision for switching the app from fixture services to Drizzle-backed services.

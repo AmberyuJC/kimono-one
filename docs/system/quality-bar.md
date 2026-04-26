@@ -18,5 +18,6 @@ Merge blockers:
 
 Known intentional gaps:
 
-- Hono is scaffolded but not yet mounted in the runtime.
-- No business pages or booking flow are implemented in Milestone 0.
+- The V0 business pages and booking draft flow use fixture-backed services by default.
+- Drizzle-backed repositories are verified separately, but the app runtime does not yet select them for normal UI/API requests.
+- No payment, login, merchant dashboard, inventory locking, or admin workflow is in scope for V0.
