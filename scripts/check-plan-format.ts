@@ -9,6 +9,8 @@ import {
 const requiredHeadings = [
   "# Plan:",
   "## Why",
+  "## Legacy Evidence",
+  "## Target Behavior",
   "## Non-goals",
   "## Scope",
   "## Acceptance Criteria",

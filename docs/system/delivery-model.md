@@ -12,3 +12,5 @@ Operational expectations:
 - Medium and large tasks belong in `docs/plans/active`.
 - Acceptance criteria are locked before implementation.
 - A task is not done until evaluator evidence exists.
+- Rewrite work follows `docs/system/rewrite-workflow.md`.
+- Completed rewrite slices are archived in `docs/traces/rewrite-ledger.md`.

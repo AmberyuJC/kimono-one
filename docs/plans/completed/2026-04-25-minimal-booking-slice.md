@@ -7,6 +7,17 @@ services, fixture data, and Playwright in the same loop. A repo with only checks
 proves the control plane exists, but not that the control plane can guide
 product delivery.
 
+## Legacy Evidence
+
+- N/A. This slice established the first new-repo fixture-backed booking path; it
+  did not inspect or migrate behavior from `~/hefumiyabi-website`.
+
+## Target Behavior
+
+The new repo exposes a fixture-backed guest booking loop from catalog browsing
+through booking draft confirmation, with Hono API coverage and Playwright smoke
+coverage on desktop and mobile.
+
 ## Non-goals
 
 - No login.

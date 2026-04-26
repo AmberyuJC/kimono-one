@@ -98,6 +98,6 @@ mapping against Postgres.
 
 ## Next milestones
 
-1. Add trace ledger records for planner, implementer, evaluator, and reviewer runs.
+1. Use `docs/system/rewrite-workflow.md` for the next legacy rewrite slice.
 2. Add visual smoke screenshot artifacts for `/plans`, `/cart`, and booking confirmation.
-3. Decide whether V1 should introduce merchant inventory or guest identity next.
+3. Decide whether V1 should introduce Drizzle-backed runtime selection or guest identity next.

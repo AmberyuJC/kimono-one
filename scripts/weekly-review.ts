@@ -15,9 +15,9 @@ const completedPlansDirectory = path.join(
 );
 const traceLedgerPath = path.join(
   process.cwd(),
-  "logs",
+  "docs",
   "traces",
-  "trace-ledger.jsonl",
+  "rewrite-ledger.md",
 );
 
 const activePlans = fs.existsSync(activePlansDirectory)
@@ -30,7 +30,10 @@ const completedPlans = fs.existsSync(completedPlansDirectory)
   : [];
 
 const traceEntries = fs.existsSync(traceLedgerPath)
-  ? fs.readFileSync(traceLedgerPath, "utf8").split("\n").filter(Boolean).length
+  ? fs
+      .readFileSync(traceLedgerPath, "utf8")
+      .split("\n")
+      .filter((line) => /^## \d{4}-\d{2}-\d{2} - /.test(line)).length
   : 0;
 
 console.log(`# Kimono One 周度复盘`);
@@ -44,4 +47,4 @@ console.log(`## 建议`);
 console.log();
 console.log(`1. 下一个中型任务进入 docs/plans/active 后再开工。`);
 console.log(`2. 为 Playwright smoke 增加截图 artifact，方便 evaluator 复盘。`);
-console.log(`3. 开始记录 trace ledger，区分计划、实现、验证和 review 结果。`);
+console.log(`3. 持续记录 trace ledger，区分计划、实现、验证和 review 结果。`);
