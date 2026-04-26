@@ -8,3 +8,4 @@ Documentation in this repository is part of the harness.
 - State exact file paths and commands when they matter.
 - Avoid aspirational language without an enforcement mechanism.
 - Plans must remain implementation-ready.
+- Rewrite plans must include legacy evidence and target behavior.

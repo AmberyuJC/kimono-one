@@ -24,6 +24,10 @@ const requiredFiles = [
   "docs/system/domain-map.md",
   "docs/system/delivery-model.md",
   "docs/system/quality-bar.md",
+  "docs/system/rewrite-workflow.md",
+  "docs/system/legacy-migration-map.md",
+  "docs/system/trace-ledger.md",
+  "docs/traces/rewrite-ledger.md",
   "docs/plans/template.md",
 ];
 

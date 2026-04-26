@@ -15,3 +15,9 @@ Out of scope for V0:
 - admin console
 - AI try-on
 - live inventory locking
+
+Rewrite priority:
+
+- First backlog theme: guest booking loop (`游客预约闭环`).
+- Work proceeds by capability slice, not page-by-page migration.
+- See `docs/system/legacy-migration-map.md` for the initial migration map.

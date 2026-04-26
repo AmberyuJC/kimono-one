@@ -15,6 +15,7 @@ Merge blockers:
 - production `console.*`
 - plan files that fail the template contract
 - missing instructions or missing custom agents
+- completed rewrite slices missing trace ledger evidence
 
 Known intentional gaps:
 
