@@ -17,6 +17,8 @@ const requiredFiles = [
   ".agents/skills/verify/SKILL.md",
   ".agents/skills/ship/SKILL.md",
   ".agents/skills/weekly-review/SKILL.md",
+  ".agents/skills/design-system/SKILL.md",
+  ".agents/skills/domain-language/SKILL.md",
   "docs/system/README.md",
   "docs/system/architecture.md",
   "docs/system/domain-map.md",
