@@ -1,0 +1,20 @@
+{
+  "features": [
+    {
+      "id": "harness-bootstrap",
+      "name": "Harness bootstrap",
+      "description": "Shared agent instructions, CI checks, architecture boundaries, and minimal booking slice are in place.",
+      "dependencies": [],
+      "status": "done",
+      "evidence": "README, AGENTS.md, docs/system, scripts/check-*, and completed plan 2026-04-25-minimal-booking-slice."
+    },
+    {
+      "id": "harness-continuity",
+      "name": "Harness continuity",
+      "description": "Claude Code memory, project subagents, session state, and initialization entrypoint make long-running work restartable.",
+      "dependencies": ["harness-bootstrap"],
+      "status": "done",
+      "evidence": "./init.sh, pnpm lint, pnpm typecheck, pnpm test, pnpm test:e2e, targeted Prettier check, and docs/plans/active/2026-05-05-harness-continuity.md"
+    }
+  ]
+}

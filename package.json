@@ -8,6 +8,7 @@
     "check:harness": "pnpm check:agent-context && pnpm check:plans && pnpm check:boundaries && pnpm check:no-console",
     "check:no-console": "tsx scripts/check-no-console.ts",
     "check:plans": "tsx scripts/check-plan-format.ts",
+    "bootstrap": "bash scripts/bootstrap.sh",
     "build": "react-router build",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
