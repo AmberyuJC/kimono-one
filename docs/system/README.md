@@ -8,6 +8,7 @@ Start here in this order:
 2. `domain-map.md`
 3. `delivery-model.md`
 4. `quality-bar.md`
+5. `uiux-harness.md`
 
 Rules for this directory:
 

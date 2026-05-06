@@ -14,6 +14,18 @@ Describe the problem being solved and why it matters now.
 - Data or schema boundaries.
 - Runtime and verification boundaries.
 
+## UI/UX Harness
+
+For UI or visual changes, fill these fields. For non-UI changes, write `N/A`.
+
+- Open Design brief:
+- Design direction:
+- Desktop evidence:
+- Mobile evidence:
+- Token alignment:
+- Accessibility and layout:
+- Verification command:
+
 ## Acceptance Criteria
 
 - [ ] The user-visible or system-visible outcome is clear.

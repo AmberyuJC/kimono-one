@@ -7,6 +7,7 @@ Hard gates:
 - `pnpm test`
 - `pnpm check:harness`
 - `pnpm test:e2e`
+- `pnpm check:uiux-harness` for active UI/UX or Open Design plans
 
 Merge blockers:
 
@@ -14,6 +15,7 @@ Merge blockers:
 - service files importing React, React Router, or Hono
 - production `console.*`
 - plan files that fail the template contract
+- active UI/UX or Open Design plans that omit brief, direction, desktop/mobile evidence, token alignment, accessibility/layout checks, or verification command
 - missing instructions or missing custom agents
 
 Known intentional gaps:
