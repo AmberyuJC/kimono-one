@@ -90,13 +90,15 @@
   --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --shadow-shu: 0 10px 25px -5px rgb(212 91 71 / 0.15);
-  --shadow-shu-lg: 0 20px 40px -10px rgb(212 91 71 / 0.20);
+  --shadow-shu-lg: 0 20px 40px -10px rgb(212 91 71 / 0.2);
   --shadow-sakura: 0 10px 25px -5px rgb(216 123 112 / 0.15);
-  --shadow-sakura-lg: 0 20px 40px -10px rgb(216 123 112 / 0.20);
+  --shadow-sakura-lg: 0 20px 40px -10px rgb(216 123 112 / 0.2);
 
   /* ── 间距 (4px base) ── */
   --space-1: 0.25rem;
@@ -114,16 +116,15 @@
   /* ── 字体栈 (System-only — never load CJK from Google Fonts) ── */
   --font-sans:
     -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue",
-    Helvetica, Arial, sans-serif;
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   --font-serif:
-    "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC",
-    "Noto Serif SC", "SimSun", Georgia, serif;
+    "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "Noto Serif SC",
+    "SimSun", Georgia, serif;
   --font-mincho:
-    "Noto Serif JP", "Source Han Serif", "Hiragino Mincho ProN",
-    "Yu Mincho", "MS Mincho", serif;
-  --font-mono:
-    "SF Mono", Monaco, "Cascadia Code", Consolas, monospace;
+    "Noto Serif JP", "Source Han Serif", "Hiragino Mincho ProN", "Yu Mincho",
+    "MS Mincho", serif;
+  --font-mono: "SF Mono", Monaco, "Cascadia Code", Consolas, monospace;
 
   /* ── 字号 (fixed pixel — never use Tailwind named sizes) ── */
   --fs-xs: 12px;
@@ -312,7 +313,7 @@ code {
   font-size: var(--fs-hero);
   font-weight: var(--fw-semibold);
   line-height: 1.2;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 /* ================================================================
@@ -413,6 +414,7 @@ textarea {
 
 .plan-card-link {
   display: grid;
+  grid-template-rows: auto 1fr;
   min-height: 100%;
 }
 
@@ -486,12 +488,29 @@ textarea {
   padding: var(--space-6);
 }
 
+.plan-card-body {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.plan-card-heading {
+  display: grid;
+  gap: var(--space-2);
+}
+
 .plan-card h2 {
   min-height: 3.2rem;
-  margin: 0 0 var(--space-4);
+  margin: 0;
   font-size: var(--fs-15);
   font-weight: var(--fw-semibold);
   line-height: 1.35;
+}
+
+.plan-summary {
+  margin: 0;
+  color: var(--wabi-600);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
 }
 
 /* ================================================================
@@ -508,6 +527,65 @@ textarea {
 
 .plan-facts {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.plan-inclusions {
+  display: grid;
+  gap: var(--space-2);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-4);
+}
+
+.plan-inclusions p {
+  margin: 0;
+  color: var(--wabi-500);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+}
+
+.plan-inclusions ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.plan-inclusions li {
+  border-radius: var(--radius-full);
+  background: var(--wabi-100);
+  color: var(--wabi-700);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  padding: var(--space-1) var(--space-3);
+}
+
+.plan-card-action {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: var(--fw-semibold);
+  padding: 0 var(--space-6);
+  transition:
+    background 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.plan-card:hover .plan-card-action {
+  background: var(--accent);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-shu);
+}
+
+.plan-card-link:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: var(--space-1);
 }
 
 dt {
@@ -755,7 +833,11 @@ dd {
 }
 
 .text-sakura-gradient {
-  background: linear-gradient(135deg, var(--sakura-400) 0%, var(--sakura-600) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--sakura-400) 0%,
+    var(--sakura-600) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

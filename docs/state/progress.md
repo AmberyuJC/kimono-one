@@ -4,8 +4,10 @@ This file records restartable session state for long-running agent work. Keep it
 
 ## Current Task
 
-- `2026-05-06-open-design-uiux-harness`: Define how Open Design will support Kimono One UI/UX exploration, review, and feature parity delivery.
-- `2026-05-05-harness-continuity`: Improve Claude Code harness continuity, bootstrap, and state tracking. Implementation and verification completed.
+- No active long-running task.
+- `2026-05-06-plans-open-design-redesign`: Completed and moved to `docs/plans/completed/`.
+- `2026-05-06-open-design-uiux-harness`: Completed and moved to `docs/plans/completed/`.
+- `2026-05-05-harness-continuity`: Completed and moved to `docs/plans/completed/`.
 
 ## Last Known State
 
@@ -17,6 +19,12 @@ This file records restartable session state for long-running agent work. Keep it
 - Added an active plan for the Open Design UI/UX harness spike with `/plans` as the first validation page.
 - Added `docs/system/uiux-harness.md`, `scripts/check-uiux-harness.ts`, and `pnpm check:uiux-harness`.
 - Extended `pnpm check:harness` so active UI/UX/Open Design plans must include brief, direction, desktop/mobile evidence, token alignment, accessibility/layout checks, and verification command.
+- Shipped the Open Design UI/UX harness changes in PR #8.
+- Added the next active plan for `/plans` Open Design redesign.
+- Added Open Design evidence under `docs/design/open-design/plans/`.
+- Updated `/plans` to show clearer package comparison hierarchy for name, price, duration, recommended scene, inclusions, and detail intent.
+- Added desktop/mobile E2E coverage for `/plans` comparison hierarchy while preserving the existing booking smoke path.
+- Moved accepted active plans to `docs/plans/completed/`.
 
 ## Verification Notes
 
@@ -32,9 +40,19 @@ This file records restartable session state for long-running agent work. Keep it
 - `pnpm lint` passed.
 - `pnpm typecheck` passed.
 - `pnpm test` passed: 3 test files, 8 tests.
+- `pnpm check:plans` passed after adding the `/plans` redesign plan.
+- `pnpm check:uiux-harness` passed after adding the `/plans` redesign plan.
+- `pnpm lint` passed after implementing the `/plans` redesign.
+- `pnpm typecheck` passed after implementing the `/plans` redesign.
+- `pnpm test` passed after implementing the `/plans` redesign: 3 test files, 8 tests.
+- `pnpm check:uiux-harness` passed after implementing the `/plans` redesign.
+- `pnpm check:harness` passed after implementing the `/plans` redesign.
+- `pnpm test:e2e` passed after implementing the `/plans` redesign: 4 tests across desktop and mobile.
+- Targeted Prettier check passed for files changed in the `/plans` redesign slice.
 
 ## Open Risks
 
 - `pnpm db:reset` was not run because this slice does not change database schema, seed data, or repository mapping.
 - Open Design integration risk is scope creep: generated prototypes must be translated into Kimono One tokens and component patterns before product implementation.
-- The actual `/plans` visual redesign is not implemented yet; it belongs in the next UI implementation slice with Open Design artifacts and Playwright evidence.
+- The `/plans` redesign intentionally used route-level presentation copy derived from existing `scene` values instead of changing domain contracts or fixture data.
+- Future feature parity work still needs separate plans for plan detail, cart, booking, merchant inventory, guest identity, or admin workflows.
