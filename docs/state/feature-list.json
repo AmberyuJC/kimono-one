@@ -14,7 +14,7 @@
       "description": "Claude Code memory, project subagents, session state, and initialization entrypoint make long-running work restartable.",
       "dependencies": ["harness-bootstrap"],
       "status": "done",
-      "evidence": "./init.sh, pnpm lint, pnpm typecheck, pnpm test, pnpm test:e2e, targeted Prettier check, and docs/plans/active/2026-05-05-harness-continuity.md"
+      "evidence": "./init.sh, pnpm lint, pnpm typecheck, pnpm test, pnpm test:e2e, targeted Prettier check, and docs/plans/completed/2026-05-05-harness-continuity.md"
     },
     {
       "id": "open-design-uiux-harness",
@@ -23,6 +23,14 @@
       "dependencies": ["harness-continuity"],
       "status": "done",
       "evidence": "docs/system/uiux-harness.md, docs/plans/template.md, scripts/check-uiux-harness.ts, pnpm check:uiux-harness, and pnpm check:harness."
+    },
+    {
+      "id": "plans-open-design-redesign",
+      "name": "Plans Open Design redesign",
+      "description": "Use Open Design artifacts to improve the /plans browsing UI, then translate the selected direction into Kimono One tokens and Playwright evidence.",
+      "dependencies": ["open-design-uiux-harness"],
+      "status": "done",
+      "evidence": "docs/plans/completed/2026-05-06-plans-open-design-redesign.md, docs/design/open-design/plans/brief.md, selected desktop/mobile screenshots, pnpm lint, pnpm typecheck, pnpm test, pnpm check:uiux-harness, pnpm check:harness, and pnpm test:e2e."
     }
   ]
 }

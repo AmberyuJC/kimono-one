@@ -10,6 +10,25 @@ const sceneLabels: Record<string, string> = {
   yukata: "浴衣",
 };
 
+const sceneGuides: Record<string, { inclusions: string[]; summary: string }> = {
+  "first-time": {
+    inclusions: ["基础着付", "轻量配饰", "浅草或京都门店"],
+    summary: "第一次穿和服也能快速完成选择，节奏轻松，适合半日街区漫步。",
+  },
+  seasonal: {
+    inclusions: ["季节色系建议", "拍照友好搭配", "4小时外出"],
+    summary: "围绕樱花季和纪念照片做层级更高的色彩搭配，适合明确拍照需求。",
+  },
+  value: {
+    inclusions: ["学生凭证优惠", "基础着付", "4小时外出"],
+    summary: "价格更克制，保留完整和服体验，适合预算敏感或多人同行。",
+  },
+  yukata: {
+    inclusions: ["浴衣着付", "半日轻体验", "快速出发"],
+    summary: "更轻便的夏季方案，适合午后短行程和第一次尝试浴衣的客人。",
+  },
+};
+
 function formatJPY(value: number) {
   return `¥${value.toLocaleString("ja-JP")}`;
 }
@@ -54,8 +73,7 @@ export default function Plans({ loaderData }: Route.ComponentProps) {
           <p className="eyebrow">Kimono One V0</p>
           <h1>选择当天要体验的和服套餐</h1>
           <p>
-            固定 seed
-            数据驱动的最小业务闭环：套餐浏览、详情确认、购物车和预约草稿。
+            从价格、时长、场景和包含内容快速比较套餐，确认后进入详情、购物车和预约草稿。
           </p>
         </div>
       </header>
@@ -86,10 +104,16 @@ export default function Plans({ loaderData }: Route.ComponentProps) {
                 <span>{sceneLabels[plan.scene] ?? plan.scene}</span>
               </div>
               <div className="plan-card-body">
-                <p className="plan-scene">
-                  {sceneLabels[plan.scene] ?? plan.scene}
+                <div className="plan-card-heading">
+                  <p className="plan-scene">
+                    {sceneLabels[plan.scene] ?? plan.scene}
+                  </p>
+                  <h2>{plan.name}</h2>
+                </div>
+                <p className="plan-summary">
+                  {sceneGuides[plan.scene]?.summary ??
+                    "适合当天和服体验的固定套餐。"}
                 </p>
-                <h2>{plan.name}</h2>
                 <dl className="plan-facts">
                   <div>
                     <dt>线上价</dt>
@@ -99,7 +123,22 @@ export default function Plans({ loaderData }: Route.ComponentProps) {
                     <dt>时长</dt>
                     <dd>{plan.durationHours} 小时</dd>
                   </div>
+                  <div>
+                    <dt>推荐场景</dt>
+                    <dd>{sceneLabels[plan.scene] ?? plan.scene}</dd>
+                  </div>
                 </dl>
+                <div className="plan-inclusions">
+                  <p>包含</p>
+                  <ul>
+                    {(
+                      sceneGuides[plan.scene]?.inclusions ?? ["固定套餐内容"]
+                    ).map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <span className="plan-card-action">查看详情</span>
               </div>
             </Link>
           </article>
