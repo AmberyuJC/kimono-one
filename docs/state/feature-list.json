@@ -15,6 +15,14 @@
       "dependencies": ["harness-bootstrap"],
       "status": "done",
       "evidence": "./init.sh, pnpm lint, pnpm typecheck, pnpm test, pnpm test:e2e, targeted Prettier check, and docs/plans/active/2026-05-05-harness-continuity.md"
+    },
+    {
+      "id": "open-design-uiux-harness",
+      "name": "Open Design UI/UX harness",
+      "description": "Open Design is wired into Kimono One as an external design lab with active-plan fields, a system rule, and a harness check for UI/UX delivery.",
+      "dependencies": ["harness-continuity"],
+      "status": "done",
+      "evidence": "docs/system/uiux-harness.md, docs/plans/template.md, scripts/check-uiux-harness.ts, pnpm check:uiux-harness, and pnpm check:harness."
     }
   ]
 }

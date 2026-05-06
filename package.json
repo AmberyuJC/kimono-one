@@ -5,9 +5,10 @@
   "scripts": {
     "check:agent-context": "tsx scripts/check-agent-context.ts",
     "check:boundaries": "tsx scripts/check-boundaries.ts",
-    "check:harness": "pnpm check:agent-context && pnpm check:plans && pnpm check:boundaries && pnpm check:no-console",
+    "check:harness": "pnpm check:agent-context && pnpm check:plans && pnpm check:uiux-harness && pnpm check:boundaries && pnpm check:no-console",
     "check:no-console": "tsx scripts/check-no-console.ts",
     "check:plans": "tsx scripts/check-plan-format.ts",
+    "check:uiux-harness": "tsx scripts/check-uiux-harness.ts",
     "bootstrap": "bash scripts/bootstrap.sh",
     "build": "react-router build",
     "db:generate": "drizzle-kit generate",

@@ -31,12 +31,14 @@ const requiredFiles = [
   "docs/system/domain-map.md",
   "docs/system/delivery-model.md",
   "docs/system/quality-bar.md",
+  "docs/system/uiux-harness.md",
   "docs/plans/template.md",
   "docs/state/progress.md",
   "docs/state/session-handoff.md",
   "docs/state/feature-list.json",
   "init.sh",
   "scripts/bootstrap.sh",
+  "scripts/check-uiux-harness.ts",
 ];
 
 const missing = requiredFiles.filter((file) => !fileExists(file));
