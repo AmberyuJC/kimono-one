@@ -2,6 +2,13 @@ import { fail, fileExists, readText } from "./lib/files";
 
 const requiredFiles = [
   "AGENTS.md",
+  "CLAUDE.md",
+  ".claude/settings.json",
+  ".claude/hooks/block-dangerous-git.sh",
+  ".claude/agents/planner.md",
+  ".claude/agents/implementer.md",
+  ".claude/agents/evaluator.md",
+  ".claude/agents/reviewer.md",
   ".github/copilot-instructions.md",
   ".github/instructions/api.instructions.md",
   ".github/instructions/app.instructions.md",
@@ -25,6 +32,11 @@ const requiredFiles = [
   "docs/system/delivery-model.md",
   "docs/system/quality-bar.md",
   "docs/plans/template.md",
+  "docs/state/progress.md",
+  "docs/state/session-handoff.md",
+  "docs/state/feature-list.json",
+  "init.sh",
+  "scripts/bootstrap.sh",
 ];
 
 const missing = requiredFiles.filter((file) => !fileExists(file));
